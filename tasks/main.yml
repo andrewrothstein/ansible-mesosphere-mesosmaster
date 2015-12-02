@@ -1,0 +1,15 @@
+---
+- name: EL...
+  when: ansible_os_family == 'RedHat'
+  include: EL.yml
+
+- name: Debian...
+  when: ansible_os_family == 'Debian'
+  include: Debian.yml
+
+- name: start mesos-master service
+  service: name={{item}} enabled=yes state=restarted
+  with_items:
+    - mesos-master
+
+  
