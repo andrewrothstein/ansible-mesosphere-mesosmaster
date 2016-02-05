@@ -1,8 +1,6 @@
 ---
 - name: install mesosmaster
-  yum: state=present name={{item}}
-  with_items:
-    - mesos
+  package: state=present name=mesos
 
 - name: install /etc/mesos-master/* files
   template: >

@@ -3,7 +3,7 @@
   file: >-
     owner=root
     group=root
-    mode="go-w"
+    mode=755
     path=/etc/mesos-master
     state=directory
 
@@ -20,7 +20,5 @@
     - ip
 
 - name: install mesosmaster
-  apt: state=present name={{item}}
-  with_items:
-    - mesos
+  package: state=present name=mesos
 
