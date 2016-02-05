@@ -2,15 +2,4 @@
 - name: install mesosmaster
   package: state=present name=mesos
 
-- name: install /etc/mesos-master/* files
-  template: >
-    src=etc/mesos-master/{{item}}.j2
-    dest=/etc/mesos-master/{{item}}
-    owner=root
-    group=root
-    mode=0644
-  with_items:
-    - quorum
-    - hostname
-    - ip
-
+- include: write-configs.yml
