@@ -3,7 +3,7 @@
   file: >-
     owner=root
     group=root
-    mode=755
+    mode=0755
     path=/etc/mesos-master
     state=directory
 
